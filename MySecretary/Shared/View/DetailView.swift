@@ -9,7 +9,27 @@ import SwiftUI
 
 struct DetailView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ContentCell()
+            Text("222")
+            Text("222")
+            Text("222")
+            Text("222")
+            Text("222")
+            Text("222")
+            Text("222")
+            Text("222")
+            Text("222")
+        }
+    }
+}
+
+struct ContentCell: View {
+    var body: some View {
+        HStack {
+            Image(systemName: "tortoise.fill")
+            Text("거북이")
+        }
     }
 }
 
