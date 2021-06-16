@@ -175,13 +175,25 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-Environment-Logger/GoogleUtilities.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC-macOS/openssl_grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-macOS/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-df6f21d7/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC-macOS/FBLPromises.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/abseil-macOS/absl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-C++-macOS/grpcpp.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core-macOS/grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-macOS/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb-macOS/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-Environment-Logger/GoogleUtilities.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC-macOS/openssl_grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-macOS/GTMSessionFetcher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-df6f21d7/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromisesObjC-macOS/FBLPromises.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/abseil-macOS/absl.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-C++-macOS/grpcpp.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core-macOS/grpc.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-macOS/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb-macOS/nanopb.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		099BED6FC52D0CADFC33EC2C /* Pods_MySecretary__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876F05EE0C59F65CDC70A863 /* Pods_MySecretary__macOS_.framework */; };
+		157BD9BA267A4524002E67A5 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D2D25F7D2840040AECB /* TabBarView.swift */; };
+		157BD9BD267A45BD002E67A5 /* AppleSignInButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BC267A45BD002E67A5 /* AppleSignInButtom.swift */; };
+		157BD9BF267A45FA002E67A5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BE267A45FA002E67A5 /* SignInView.swift */; };
 		15BE8CF425F7CD820040AECB /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8CF325F7CD820040AECB /* Tests_iOS.swift */; };
 		15BE8CFF25F7CD820040AECB /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8CFE25F7CD820040AECB /* Tests_macOS.swift */; };
 		15BE8D0125F7CD820040AECB /* MySecretaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8CD825F7CD810040AECB /* MySecretaryApp.swift */; };
@@ -47,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		08636D8872DF25BBAAA5AF51 /* Pods-MySecretary (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySecretary (iOS).debug.xcconfig"; path = "Target Support Files/Pods-MySecretary (iOS)/Pods-MySecretary (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		157BD9BC267A45BD002E67A5 /* AppleSignInButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButtom.swift; sourceTree = "<group>"; };
+		157BD9BE267A45FA002E67A5 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		15BE8CD825F7CD810040AECB /* MySecretaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecretaryApp.swift; sourceTree = "<group>"; };
 		15BE8CD925F7CD810040AECB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		15BE8CDA25F7CD820040AECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		15BE8D2225F7D26E0040AECB /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		15BE8D2D25F7D2840040AECB /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		15D99FCB260A3CB800AB0714 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		15D9A023260B77A800AB0714 /* MySecretary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySecretary.entitlements; sourceTree = "<group>"; };
 		15E6E11A25FA86F300D14BED /* MacDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDetailView.swift; sourceTree = "<group>"; };
 		16490043D17C0D21592F6C00 /* Pods-MySecretary (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySecretary (macOS).release.xcconfig"; path = "Target Support Files/Pods-MySecretary (macOS)/Pods-MySecretary (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		5B258E3D437C1110288167BB /* Pods-MySecretary (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySecretary (iOS).release.xcconfig"; path = "Target Support Files/Pods-MySecretary (iOS)/Pods-MySecretary (iOS).release.xcconfig"; sourceTree = "<group>"; };
@@ -115,13 +121,38 @@
 				8FDDD5D795BAFD961DDE6A39 /* Pods-MySecretary (macOS).debug.xcconfig */,
 				16490043D17C0D21592F6C00 /* Pods-MySecretary (macOS).release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		157BD9B8267A44FB002E67A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15E6E11A25FA86F300D14BED /* MacDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		157BD9B9267A4518002E67A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15BE8D2D25F7D2840040AECB /* TabBarView.swift */,
+				15BE8D1925F7D1800040AECB /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		157BD9BB267A4554002E67A5 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				157BD9BC267A45BD002E67A5 /* AppleSignInButtom.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		15BE8CD225F7CD810040AECB = {
 			isa = PBXGroup;
 			children = (
+				15D9A023260B77A800AB0714 /* MySecretary.entitlements */,
 				15BE8CD725F7CD810040AECB /* Shared */,
 				15BE8CE125F7CD820040AECB /* iOS */,
 				15BE8CE825F7CD820040AECB /* macOS */,
@@ -136,11 +167,11 @@
 		15BE8CD725F7CD810040AECB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				15BE8CD825F7CD810040AECB /* MySecretaryApp.swift */,
+				15BE8CD925F7CD810040AECB /* ContentView.swift */,
 				15D99FC625FDB34B00AB0714 /* Model */,
 				15BE8D2025F7D1870040AECB /* View */,
 				15D99FC525FDB33E00AB0714 /* View Model */,
-				15BE8CD825F7CD810040AECB /* MySecretaryApp.swift */,
-				15BE8CD925F7CD810040AECB /* ContentView.swift */,
 				15BE8CDA25F7CD820040AECB /* Assets.xcassets */,
 				15D99FCB260A3CB800AB0714 /* GoogleService-Info.plist */,
 			);
@@ -161,6 +192,7 @@
 		15BE8CE125F7CD820040AECB /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				157BD9B9267A4518002E67A5 /* View */,
 				15BE8CE225F7CD820040AECB /* Info.plist */,
 			);
 			path = iOS;
@@ -169,6 +201,7 @@
 		15BE8CE825F7CD820040AECB /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				157BD9B8267A44FB002E67A5 /* View */,
 				15BE8CE925F7CD820040AECB /* Info.plist */,
 				15BE8CEA25F7CD820040AECB /* macOS.entitlements */,
 			);
@@ -196,20 +229,11 @@
 		15BE8D2025F7D1870040AECB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				15BE8D2125F7D2170040AECB /* Architectural View */,
-				15BE8D1925F7D1800040AECB /* DetailView.swift */,
-				15E6E11A25FA86F300D14BED /* MacDetailView.swift */,
+				157BD9BB267A4554002E67A5 /* Button */,
+				15BE8D2225F7D26E0040AECB /* SideBarView.swift */,
+				157BD9BE267A45FA002E67A5 /* SignInView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		15BE8D2125F7D2170040AECB /* Architectural View */ = {
-			isa = PBXGroup;
-			children = (
-				15BE8D2225F7D26E0040AECB /* SideBarView.swift */,
-				15BE8D2D25F7D2840040AECB /* TabBarView.swift */,
-			);
-			path = "Architectural View";
 			sourceTree = "<group>";
 		};
 		15D99FC525FDB33E00AB0714 /* View Model */ = {
@@ -481,9 +505,11 @@
 			files = (
 				15BE8D0325F7CD820040AECB /* ContentView.swift in Sources */,
 				15BE8D2325F7D26E0040AECB /* SideBarView.swift in Sources */,
+				157BD9BD267A45BD002E67A5 /* AppleSignInButtom.swift in Sources */,
 				15BE8D1A25F7D1800040AECB /* DetailView.swift in Sources */,
 				15E6E11B25FA86F300D14BED /* MacDetailView.swift in Sources */,
 				15BE8D2E25F7D2840040AECB /* TabBarView.swift in Sources */,
+				157BD9BF267A45FA002E67A5 /* SignInView.swift in Sources */,
 				15BE8D0125F7CD820040AECB /* MySecretaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +522,7 @@
 				15BE8D2425F7D26E0040AECB /* SideBarView.swift in Sources */,
 				15BE8D1B25F7D1800040AECB /* DetailView.swift in Sources */,
 				15BE8D0225F7CD820040AECB /* MySecretaryApp.swift in Sources */,
+				157BD9BA267A4524002E67A5 /* TabBarView.swift in Sources */,
 				15E6E11C25FA86F300D14BED /* MacDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MySecretary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6T7UT6A2N;
 				ENABLE_PREVIEWS = YES;
@@ -672,6 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MySecretary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A6T7UT6A2N;
 				ENABLE_PREVIEWS = YES;

@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import CryptoKit
+import FirebaseAuth
+import AuthenticationServices
 
 struct ContentView: View {
     #if os(iOS)

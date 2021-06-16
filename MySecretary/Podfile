@@ -6,7 +6,10 @@ target 'MySecretary (iOS)' do
   use_frameworks!
 
   # Pods for MySecretary (iOS)
+	pod 'Firebase'
 	pod 'Firebase/Analytics'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Firestore'
 
 end
 
@@ -15,6 +18,8 @@ target 'MySecretary (macOS)' do
   use_frameworks!
 
   # Pods for MySecretary (macOS)
-	pod 'Firebase/Analytics'
+	pod 'Firebase'
+	pod 'FirebaseAuth'
+	pod 'FirebaseFirestore'
 
 end
