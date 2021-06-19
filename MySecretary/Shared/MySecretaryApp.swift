@@ -23,9 +23,16 @@ struct MySecretaryApp: App {
             if Auth.auth().currentUser != nil {
                 ContentView()
             } else {
+                #if os(iOS)
                 ContentView()
                     .fullScreenCover(isPresented: $presentingModal, content: SignInView.init)
                     .animation(.none)
+                #else
+                ContentView()
+                    .sheet(isPresented: $presentingModal, content: {
+                        SignInView()
+                    })
+                #endif
             }
         }.onChange(of: scenePhase, perform: { phase in
             switch scenePhase {

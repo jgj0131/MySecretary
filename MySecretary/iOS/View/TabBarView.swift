@@ -11,58 +11,54 @@ struct TabBarView: View {
     @State private var selection: Tab = .todo
 
     var body: some View {
-        TabView(selection: $selection) {
-            #if os(iOS)
-            NavigationView {
+        NavigationView {
+            TabView(selection: $selection) {
+                #if os(iOS)
                 DetailView()
-                    .navigationBarTitle("Todo")
-            }
-            .tabItem {
-                Label("Todo", systemImage: "clock.fill")
-                    .accessibility(label: Text("Todo"))
-            }
-            .tag(Tab.todo)
-            
-            NavigationView {
+                    .tabItem {
+                        Label("Todo", systemImage: "clock.fill")
+                            .accessibility(label: Text("Todo"))
+                    }.tag(Tab.todo)
+                
                 DetailView()
-                    .navigationBarTitle("Doing")
-            }
-            .tabItem {
-                Label("Doing", systemImage: "play.circle.fill")
-                    .accessibility(label: Text("Doing"))
-            }
-            .tag(Tab.doing)
-            
-            NavigationView {
+                    .tabItem {
+                        Label("Doing", systemImage: "play.circle.fill")
+                            .accessibility(label: Text("Doing"))
+                    }.tag(Tab.doing)
+                
                 DetailView()
-                    .navigationBarTitle("Issue")
-            }
-            .tabItem {
-                Label("Issue", systemImage: "exclamationmark.triangle.fill")
-                    .accessibility(label: Text("Issue"))
-            }
-            .tag(Tab.doing)
-            
-            NavigationView {
+                    .tabItem {
+                        Label("Issue", systemImage: "exclamationmark.triangle.fill")
+                            .accessibility(label: Text("Issue"))
+                    }.tag(Tab.issue)
+                
                 DetailView()
-                    .navigationBarTitle("Done")
+                    .tabItem {
+                        Label("Done", systemImage: "checkmark.circle.fill")
+                            .accessibility(label: Text("Done"))
+                    }.tag(Tab.done)
+                #endif
             }
-            .tabItem {
-                Label("Done", systemImage: "checkmark.circle.fill")
-                    .accessibility(label: Text("Done"))
+            .navigationBarTitle(selection.rawValue)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: UserInfoView()) {
+                        Button(action: {}) {
+                            Image(systemName: "person.crop.circle")
+                        }
+                    }
+                }
             }
-            .tag(Tab.doing)
-            #endif
         }
     }
 }
 
 extension TabBarView {
-    enum Tab {
-        case todo
-        case doing
-        case issue
-        case done
+    enum Tab: String {
+        case todo = "todo"
+        case doing = "doing"
+        case issue = "issue"
+        case done = "done"
     }
 }
 

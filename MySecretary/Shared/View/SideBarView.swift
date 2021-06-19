@@ -35,13 +35,13 @@ struct SideBarView: View {
                 Label("Issue", systemImage: "exclamationmark.triangle.fill")
             }
             .accessibility(label: Text("Issue"))
-            .tag(NavigationItem.doing)
+            .tag(NavigationItem.issue)
             
             NavigationLink(destination: DetailView()) {
                 Label("Done", systemImage: "checkmark.circle.fill")
             }
             .accessibility(label: Text("Done"))
-            .tag(NavigationItem.doing)
+            .tag(NavigationItem.done)
         }
         .listStyle(SidebarListStyle())
     }
