@@ -16,28 +16,13 @@ struct UserInfoView: View {
                 Text("🔠 폰트 변경")
             }
             Section(header: Text("Sign Out")) {
-                Button(action: {
-                        signOut()
-                }, label: {
-                    Text("🚪 로그 아웃")
-                })
+                SignOutButton()
             }
         }
         .listStyle(InsetGroupedListStyle())
         .onAppear(perform: {
             UITableView.appearance().isScrollEnabled = false
         })
-    }
-}
-
-extension UserInfoView {
-    func signOut() {
-        let firebaseAuth = Auth.auth()
-        do {
-          try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
-        }
     }
 }
 
