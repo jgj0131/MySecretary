@@ -9,6 +9,10 @@ import SwiftUI
 import FirebaseAuth
 
 struct UserInfoView: View {
+    @Binding var presentingModal: Bool
+    @Binding var selection: TabCategory
+    @Binding var rootIsActive: Bool
+    
     var body: some View {
         List {
             Section(header: Text("Thema")/*, footer: Text("Footer1")*/ ) {
@@ -16,7 +20,7 @@ struct UserInfoView: View {
                 Text("🔠 폰트 변경")
             }
             Section(header: Text("Sign Out")) {
-                SignOutButton()
+                SignOutButton(presentingModal: $presentingModal, selection: self.$selection, shouldPopToRootView: self.$rootIsActive)
             }
         }
         .listStyle(InsetGroupedListStyle())
@@ -28,6 +32,6 @@ struct UserInfoView: View {
 
 struct UserInfo_Previews: PreviewProvider {
     static var previews: some View {
-        UserInfoView()
+        UserInfoView(presentingModal: .constant(true), selection: .constant(.todo), rootIsActive: .constant(true))
     }
 }

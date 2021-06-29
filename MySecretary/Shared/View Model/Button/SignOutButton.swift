@@ -9,28 +9,47 @@ import SwiftUI
 import FirebaseAuth
 
 struct SignOutButton: View {
+    // MARK: Property
+    @Binding var presentingModal: Bool
+    @Binding var selection: TabCategory
+    @Binding var shouldPopToRootView: Bool
+    
+    // MARK: View
     var body: some View {
-        Button(action: {
-                signOut()
-        }, label: {
-            Text("🚪 로그 아웃")
-        })
+        Button("🚪 로그 아웃", action: signOut)
     }
-}
-
-extension SignOutButton {
+    
+    // MARK: Custom Method
     func signOut() {
         let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
+            try firebaseAuth.signOut()
+            if self.selection == .todo {
+                self.shouldPopToRootView = false
+            } else {
+                self.shouldPopToRootView = false
+                self.selection = .todo
+            }
+            presentingModal = true
+            #if os(iOS)
+//            TabBarView()
+//                .fullScreenCover(isPresented: $presentingModal, content: SignInView.init)
+//                .animation(.none)
+            #else
+//            ContentView()
+//                .sheet(isPresented: $presentingModal, content: {
+//                    SignInView()
+//                })
+            #endif
         } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
+            print ("Error signing out: %@", signOutError)
         }
     }
 }
 
+// MARK: Preview
 struct SignOutButton_Previews: PreviewProvider {
     static var previews: some View {
-        SignOutButton()
+        SignOutButton(presentingModal: .constant(true), selection: .constant(.todo), shouldPopToRootView: .constant(true))
     }
 }

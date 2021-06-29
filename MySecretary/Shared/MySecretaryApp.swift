@@ -21,14 +21,14 @@ struct MySecretaryApp: App {
     var body: some Scene {
         WindowGroup {
             if Auth.auth().currentUser != nil {
-                ContentView()
+                ContentView(presentingModal: $presentingModal)
             } else {
                 #if os(iOS)
-                ContentView()
+                ContentView(presentingModal: $presentingModal)
                     .fullScreenCover(isPresented: $presentingModal, content: SignInView.init)
                     .animation(.none)
                 #else
-                ContentView()
+                ContentView(presentingModal: $presentingModal)
                     .sheet(isPresented: $presentingModal, content: {
                         SignInView()
                     })

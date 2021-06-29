@@ -8,14 +8,8 @@
 import SwiftUI
 
 struct SideBarView: View {
-    enum NavigationItem {
-        case todo
-        case doing
-        case issue
-        case done
-    }
-        
-    @State private var selection: Set<NavigationItem> = [.todo]
+    @Binding var presentingModal: Bool
+    @State private var selection: Set<TabCategory> = [.todo]
     
     var sidebar: some View {
         List(selection: $selection) {
@@ -23,25 +17,25 @@ struct SideBarView: View {
                 Label("Todo", systemImage: "clock.fill")
             }
             .accessibility(label: Text("Menu"))
-            .tag(NavigationItem.todo)
+            .tag(TabCategory.todo)
             
             NavigationLink(destination: DetailView()) {
                 Label("Doing", systemImage: "play.circle.fill")
             }
             .accessibility(label: Text("Favorites"))
-            .tag(NavigationItem.doing)
+            .tag(TabCategory.doing)
             
             NavigationLink(destination: DetailView()) {
                 Label("Issue", systemImage: "exclamationmark.triangle.fill")
             }
             .accessibility(label: Text("Issue"))
-            .tag(NavigationItem.issue)
+            .tag(TabCategory.issue)
             
             NavigationLink(destination: DetailView()) {
                 Label("Done", systemImage: "checkmark.circle.fill")
             }
             .accessibility(label: Text("Done"))
-            .tag(NavigationItem.done)
+            .tag(TabCategory.done)
         }
         .listStyle(SidebarListStyle())
     }
@@ -62,6 +56,6 @@ struct SideBarView: View {
 
 struct SideBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SideBarView()
+        SideBarView(presentingModal: .constant(true))
     }
 }

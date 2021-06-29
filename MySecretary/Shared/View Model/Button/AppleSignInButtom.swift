@@ -14,7 +14,7 @@ struct AppleSignInButton: View {
     @Environment(\.colorScheme) var colorScheme
     @State var currentNonce:String?
     @Environment(\.presentationMode) var presentationMode
-    
+
     var body: some View {
         SignInWithAppleButton(onRequest: { request in
             let nonce = randomNonceString()
@@ -26,7 +26,7 @@ struct AppleSignInButton: View {
             case .success(let authResults):
                 switch authResults.credential {
                 case let appleIDCredential as ASAuthorizationAppleIDCredential:
-                                                  
+
                 guard let nonce = currentNonce else {
                     fatalError("Invalid state: A login callback was received, but no login request was sent.")
                 }
@@ -37,7 +37,7 @@ struct AppleSignInButton: View {
                     print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
                     return
                 }
-                     
+
                 let credential = OAuthProvider.credential(withProviderID: "apple.com",idToken: idTokenString,rawNonce: nonce)
                     Auth.auth().signIn(with: credential) { (authResult, error) in
                     if (error != nil) {
@@ -68,7 +68,7 @@ extension AppleSignInButton {
         }.joined()
         return hashString
     }
-        
+
     private func randomNonceString(length: Int = 32) -> String {
         precondition(length > 0)
         let charset: Array<Character> = Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")

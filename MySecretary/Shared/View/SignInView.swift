@@ -53,11 +53,11 @@ struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         #if os(iOS)
         Group {
-            ContentView().previewDevice("iPad Pro (12.9-inch) (4th generation)")
-            ContentView().previewDevice("iPhone 12 Pro")
+            SignInView().previewDevice("iPad Pro (12.9-inch) (4th generation)")
+            SignInView().previewDevice("iPhone 12 Pro")
         }
         #else
-        ContentView().previewDevice("Mac")
+        SignInView().previewDevice("Mac")
         #endif
     }
 }
