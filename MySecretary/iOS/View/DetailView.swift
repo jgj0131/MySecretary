@@ -21,6 +21,7 @@ struct DetailView: View {
             Text("222")
             Text("222")
             Text("222")
+            .listStyle(InsetGroupedListStyle())
         }
     }
 }

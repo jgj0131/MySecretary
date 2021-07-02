@@ -11,7 +11,7 @@ import FirebaseAuth
 struct SignOutButton: View {
     // MARK: Property
     @Binding var presentingModal: Bool
-    @Binding var selection: TabCategory
+    @Binding var selection: Int
     @Binding var shouldPopToRootView: Bool
     
     // MARK: View
@@ -24,11 +24,11 @@ struct SignOutButton: View {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            if self.selection == .todo {
+            if self.selection == 0 {
                 self.shouldPopToRootView = false
             } else {
                 self.shouldPopToRootView = false
-                self.selection = .todo
+                self.selection = 0
             }
             presentingModal = true
             #if os(iOS)
@@ -50,6 +50,6 @@ struct SignOutButton: View {
 // MARK: Preview
 struct SignOutButton_Previews: PreviewProvider {
     static var previews: some View {
-        SignOutButton(presentingModal: .constant(true), selection: .constant(.todo), shouldPopToRootView: .constant(true))
+        SignOutButton(presentingModal: .constant(true), selection: .constant(0), shouldPopToRootView: .constant(true))
     }
 }

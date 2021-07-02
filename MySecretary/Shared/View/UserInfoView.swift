@@ -10,7 +10,7 @@ import FirebaseAuth
 
 struct UserInfoView: View {
     @Binding var presentingModal: Bool
-    @Binding var selection: TabCategory
+    @Binding var selection: Int
     @Binding var rootIsActive: Bool
     
     var body: some View {
@@ -32,6 +32,6 @@ struct UserInfoView: View {
 
 struct UserInfo_Previews: PreviewProvider {
     static var previews: some View {
-        UserInfoView(presentingModal: .constant(true), selection: .constant(.todo), rootIsActive: .constant(true))
+        UserInfoView(presentingModal: .constant(true), selection: .constant(0), rootIsActive: .constant(true))
     }
 }

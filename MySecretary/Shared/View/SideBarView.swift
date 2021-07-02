@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+enum TabCategory: String {
+    case todo = "Todo"
+    case doing = "Doing"
+    case add
+    case issue = "Issue"
+    case done = "Done"
+}
+
 struct SideBarView: View {
     @Binding var presentingModal: Bool
     @State private var selection: Set<TabCategory> = [.todo]

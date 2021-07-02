@@ -7,123 +7,137 @@
 
 import SwiftUI
 
-enum TabCategory: String {
-    case todo = "Todo"
-    case doing = "Doing"
-    case issue = "Issue"
-    case done = "Done"
-}
-
 struct TabBarView: View {
     // MARK: Property
     @Binding var presentingModal: Bool
-    @State private var selection: TabCategory = .todo
+    @State private var selectedIndex = 0
     @State private var resetNavigationID = UUID()
+    @State private var shouldShowActionSheet = false
     @State var isActive: Bool = false
+    
+    // all: text.badge.checkmark
+    // share: link square.and.arrow.up
+    // done: checkmark.circle
+    let tabBarImangeNames = ["calendar", "square.grid.3x3.topleft.fill", "plus.app.fill", "link", "hand.thumbsup.fill"]
+    let tabBarNames = ["Today", "All", "", "Share", "Done"]
 
     // MARK: View
     var body: some View {
-
-        let selectable = Binding(
-            get: { self.selection },
-            set: {
-                self.selection = $0
-                self.resetNavigationID = UUID()
-                self.isActive = false
+        VStack {
+            ZStack {
+                Spacer()
+                    .fullScreenCover(isPresented: $shouldShowActionSheet, content: {
+                        AddListView(shouldShowActionSheet: $shouldShowActionSheet)
+                    })
+                
+                switch selectedIndex {
+                case 0:
+                    NavigationView {
+                        DetailView()
+                            .listStyle(InsetGroupedListStyle())
+                            .navigationBarTitle("Today")
+                            .toolbar(content: {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    NavigationLink(
+                                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selectedIndex, rootIsActive: $isActive),
+                                        isActive: self.$isActive
+                                    ) {
+                                        Image(systemName: "gear")
+                                            .font(.system(size: 24, weight: .bold))
+                                            .foregroundColor(Color(.secondaryLabel))
+                                    }.isDetailLink(false)
+                                }
+                            })
+                    }.id(self.resetNavigationID)
+                case 1:
+                    NavigationView {
+                        DetailView()
+                            .listStyle(InsetGroupedListStyle())
+                            .navigationTitle("All")
+                            .toolbar(content: {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    NavigationLink(
+                                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selectedIndex, rootIsActive: $isActive),
+                                        isActive: self.$isActive
+                                    ) {
+                                        Image(systemName: "gear")
+                                            .font(.system(size: 24, weight: .bold))
+                                            .foregroundColor(Color(.secondaryLabel))
+                                    }.isDetailLink(false)
+                                }
+                            })
+                    }.id(self.resetNavigationID)
+                case 3:
+                    NavigationView {
+                        DetailView()
+                            .listStyle(InsetGroupedListStyle())
+                            .navigationTitle("Share")
+                            .toolbar(content: {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    NavigationLink(
+                                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selectedIndex, rootIsActive: $isActive),
+                                        isActive: self.$isActive
+                                    ) {
+                                        Image(systemName: "gear")
+                                            .font(.system(size: 24, weight: .bold))
+                                            .foregroundColor(Color(.secondaryLabel))
+                                    }.isDetailLink(false)
+                                }
+                            })
+                    }.id(self.resetNavigationID)
+                case 4:
+                    NavigationView {
+                        DetailView()
+                            .listStyle(InsetGroupedListStyle())
+                            .navigationTitle("Done")
+                            .toolbar(content: {
+                                ToolbarItem(placement: .navigationBarTrailing) {
+                                    NavigationLink(
+                                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selectedIndex, rootIsActive: $isActive),
+                                        isActive: self.$isActive
+                                    ) {
+                                        Image(systemName: "gear")
+                                            .font(.system(size: 24, weight: .bold))
+                                            .foregroundColor(Color(.secondaryLabel))
+                                    }.isDetailLink(false)
+                                }
+                            })
+                    }.id(self.resetNavigationID)
+                default:
+                    Text("")
+                }
             }
-        )
-
-        return TabView(selection: selectable) {
-            self.todoTab()
-                .tabItem {
-                    Label("Todo", systemImage: "clock.fill")
-                        .accessibility(label: Text("Todo"))
-                }.tag(TabCategory.todo)
-            
-            self.doingTab()
-                .tabItem {
-                    Label("Doing", systemImage: "play.circle.fill")
-                        .accessibility(label: Text("Doing"))
-                }.tag(TabCategory.doing)
-            self.issueTab()
-                .tabItem {
-                    Label("Issue", systemImage: "exclamationmark.triangle.fill")
-                        .accessibility(label: Text("Issue"))
-                }.tag(TabCategory.issue)
-            self.doneTab()
-                .tabItem {
-                    Label("Done", systemImage: "checkmark.circle.fill")
-                        .accessibility(label: Text("Done"))
-                }.tag(TabCategory.done)
+            Spacer()
+            HStack{
+                ForEach(0..<5) { num in
+                    Button(action: {
+                        isActive = false
+                        if num == 2 {
+                            shouldShowActionSheet.toggle()
+                            return
+                        }
+                        selectedIndex = num
+                    }, label: {
+                        Spacer()
+                        if num == 2 {
+                            Image(systemName: tabBarImangeNames[num])
+                                .font(.system(size: 44, weight: .bold))
+                                .foregroundColor(.blue)
+                        } else {
+                            VStack {
+                                Image(systemName: tabBarImangeNames[num])
+                                    .font(.system(size: 24, weight: .bold))
+                                    .foregroundColor(selectedIndex == num ? Color(.label) : Color(.tertiaryLabel))
+                                Text(tabBarNames[num])
+                                    .font(.system(size: 12, weight: .bold))
+                                    .foregroundColor(selectedIndex == num ? Color(.label) : Color(.tertiaryLabel))
+                            }
+                        }
+                        Spacer()
+                    })
+                }
+            }
         }
-    }
-
-    // MARK: Custom Method
-    private func todoTab() -> some View {
-        NavigationView {
-            DetailView()
-            .navigationBarTitle(selection.rawValue)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(
-                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selection, rootIsActive: $isActive),
-                        isActive: self.$isActive
-                    ) {
-                        Image(systemName: "person.crop.circle")
-                    }.isDetailLink(false)
-                }
-            }
-        }.id(self.resetNavigationID)
-    }
-
-    private func doingTab() -> some View {
-        NavigationView {
-            DetailView()
-            .navigationBarTitle(selection.rawValue)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(
-                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selection, rootIsActive: $isActive),
-                        isActive: self.$isActive
-                    ) {
-                        Image(systemName: "person.crop.circle")
-                    }.isDetailLink(false)
-                }
-            }
-        }.id(self.resetNavigationID)    }
-
-    private func issueTab() -> some View {
-        NavigationView {
-            DetailView()
-            .navigationBarTitle(selection.rawValue)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(
-                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selection, rootIsActive: $isActive),
-                        isActive: self.$isActive
-                    ) {
-                        Image(systemName: "person.crop.circle")
-                    }.isDetailLink(false)
-                }
-            }
-        }.id(self.resetNavigationID)
-    }
-
-    private func doneTab() -> some View {
-        NavigationView {
-            DetailView()
-            .navigationBarTitle(selection.rawValue)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(
-                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selection, rootIsActive: $isActive),
-                        isActive: self.$isActive
-                    ) {
-                        Image(systemName: "person.crop.circle")
-                    }.isDetailLink(false)
-                }
-            }
-        }.id(self.resetNavigationID)
     }
 }
 
