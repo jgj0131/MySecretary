@@ -13,13 +13,9 @@ import AuthenticationServices
 struct ContentView: View {
     @Binding var presentingModal: Bool
 
-    #if os(iOS)
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    #endif
-
     var body: some View {
         #if os(iOS)
-        if horizontalSizeClass == .compact {
+        if UIDevice.current.userInterfaceIdiom == .phone {
             TabBarView(presentingModal: $presentingModal).accentColor(Color(UIColor.label))
         } else {
             SideBarView(presentingModal: $presentingModal).accentColor(Color(UIColor.label))

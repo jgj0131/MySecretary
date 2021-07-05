@@ -10,7 +10,7 @@ import SwiftUI
 struct MacDetailView: View {
     var body: some View {
         List {
-            ContentCell()
+            MacContentCell()
             Text("222")
             Text("222")
             Text("222")
@@ -21,6 +21,14 @@ struct MacDetailView: View {
             Text("222")
             Text("222")
         }.navigationTitle("Todo") 
+    }
+}
+
+struct MacContentCell: View {
+    @Environment(\.colorScheme) var colorScheme
+    
+    var body: some View {
+        Text("My Secretary")
     }
 }
 

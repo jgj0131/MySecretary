@@ -8,16 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		099BED6FC52D0CADFC33EC2C /* Pods_MySecretary__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876F05EE0C59F65CDC70A863 /* Pods_MySecretary__macOS_.framework */; };
-		157BD9BA267A4524002E67A5 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D2D25F7D2840040AECB /* TabBarView.swift */; };
 		157BD9BD267A45BD002E67A5 /* AppleSignInButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BC267A45BD002E67A5 /* AppleSignInButtom.swift */; };
 		157BD9BF267A45FA002E67A5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BE267A45FA002E67A5 /* SignInView.swift */; };
 		157BD9C0267CE352002E67A5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BE267A45FA002E67A5 /* SignInView.swift */; };
 		157BD9C1267CE38C002E67A5 /* AppleSignInButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BC267A45BD002E67A5 /* AppleSignInButtom.swift */; };
 		157BD9C3267DA3B4002E67A5 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9C2267DA3B4002E67A5 /* UserInfoView.swift */; };
-		157BD9C4267DA8C4002E67A5 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9C2267DA3B4002E67A5 /* UserInfoView.swift */; };
 		157BD9C6267E08B2002E67A5 /* SignOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9C5267E08B2002E67A5 /* SignOutButton.swift */; };
 		15AFEF15268DFD2100DA6545 /* EmailSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFEF14268DFD2100DA6545 /* EmailSignInButton.swift */; };
 		15AFEF17268E086600DA6545 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFEF16268E086600DA6545 /* AddListView.swift */; };
+		15AFEF1826931D7A00DA6545 /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFEF16268E086600DA6545 /* AddListView.swift */; };
+		15AFEF1926931FA800DA6545 /* EmailSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFEF14268DFD2100DA6545 /* EmailSignInButton.swift */; };
+		15AFEF1A26931FC500DA6545 /* SignOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9C5267E08B2002E67A5 /* SignOutButton.swift */; };
+		15AFEF1B269320FB00DA6545 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9C2267DA3B4002E67A5 /* UserInfoView.swift */; };
 		15BE8CF425F7CD820040AECB /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8CF325F7CD820040AECB /* Tests_iOS.swift */; };
 		15BE8CFF25F7CD820040AECB /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8CFE25F7CD820040AECB /* Tests_macOS.swift */; };
 		15BE8D0125F7CD820040AECB /* MySecretaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8CD825F7CD810040AECB /* MySecretaryApp.swift */; };
@@ -27,7 +29,6 @@
 		15BE8D0525F7CD820040AECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15BE8CDA25F7CD820040AECB /* Assets.xcassets */; };
 		15BE8D0625F7CD820040AECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15BE8CDA25F7CD820040AECB /* Assets.xcassets */; };
 		15BE8D1A25F7D1800040AECB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D1925F7D1800040AECB /* DetailView.swift */; };
-		15BE8D1B25F7D1800040AECB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D1925F7D1800040AECB /* DetailView.swift */; };
 		15BE8D2325F7D26E0040AECB /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D2225F7D26E0040AECB /* SideBarView.swift */; };
 		15BE8D2425F7D26E0040AECB /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D2225F7D26E0040AECB /* SideBarView.swift */; };
 		15BE8D2E25F7D2840040AECB /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D2D25F7D2840040AECB /* TabBarView.swift */; };
@@ -537,15 +538,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				157BD9C4267DA8C4002E67A5 /* UserInfoView.swift in Sources */,
 				15BE8D0425F7CD820040AECB /* ContentView.swift in Sources */,
+				15AFEF1926931FA800DA6545 /* EmailSignInButton.swift in Sources */,
+				15AFEF1A26931FC500DA6545 /* SignOutButton.swift in Sources */,
 				157BD9C0267CE352002E67A5 /* SignInView.swift in Sources */,
 				15BE8D2425F7D26E0040AECB /* SideBarView.swift in Sources */,
-				15BE8D1B25F7D1800040AECB /* DetailView.swift in Sources */,
 				15BE8D0225F7CD820040AECB /* MySecretaryApp.swift in Sources */,
-				157BD9BA267A4524002E67A5 /* TabBarView.swift in Sources */,
+				15AFEF1826931D7A00DA6545 /* AddListView.swift in Sources */,
 				15E6E11C25FA86F300D14BED /* MacDetailView.swift in Sources */,
 				157BD9C1267CE38C002E67A5 /* AppleSignInButtom.swift in Sources */,
+				15AFEF1B269320FB00DA6545 /* UserInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,7 @@ struct UserInfoView: View {
     @Binding var rootIsActive: Bool
     
     var body: some View {
+        #if os(iOS)
         List {
             Section(header: Text("Thema")/*, footer: Text("Footer1")*/ ) {
                 Text("🎨 테마 변경")
@@ -23,10 +24,22 @@ struct UserInfoView: View {
                 SignOutButton(presentingModal: $presentingModal, selection: self.$selection, shouldPopToRootView: self.$rootIsActive)
             }
         }
+        
         .listStyle(InsetGroupedListStyle())
         .onAppear(perform: {
             UITableView.appearance().isScrollEnabled = false
         })
+        #else
+        List {
+            Section(header: Text("Thema")/*, footer: Text("Footer1")*/ ) {
+                Text("🎨 테마 변경")
+                Text("🔠 폰트 변경")
+            }
+            Section(header: Text("Sign Out")) {
+                SignOutButton(presentingModal: $presentingModal, selection: self.$selection, shouldPopToRootView: self.$rootIsActive)
+            }
+        }
+        #endif
     }
 }
 

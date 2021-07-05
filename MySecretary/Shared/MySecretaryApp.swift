@@ -19,7 +19,7 @@ struct MySecretaryApp: App {
     }
     
     var body: some Scene {
-        WindowGroup {
+        WindowGroup {            
             if Auth.auth().currentUser != nil {
                 ContentView(presentingModal: $presentingModal)
             } else {
