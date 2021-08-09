@@ -9,31 +9,19 @@ import SwiftUI
 import AuthenticationServices
 
 struct DetailView: View {
+    // MARK: View
     var body: some View {
-        List {
+        ScrollView(.vertical, showsIndicators: false) {
+            Spacer().frame(height:10)
             ContentCell()
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            .listStyle(InsetGroupedListStyle())
+            Spacer().frame(height:10)
+            ContentCell()
+            Spacer()
         }
     }
 }
 
-struct ContentCell: View {
-    @Environment(\.colorScheme) var colorScheme
-    
-    var body: some View {
-        Text("My Secretary")
-    }
-}
-
+// MARK: Preview
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         DetailView()

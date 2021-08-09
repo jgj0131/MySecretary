@@ -15,9 +15,6 @@ struct TabBarView: View {
     @State private var shouldShowActionSheet = false
     @State var isActive: Bool = false
     
-    // all: text.badge.checkmark
-    // share: link square.and.arrow.up
-    // done: checkmark.circle
     let tabBarImangeNames = ["calendar", "square.grid.3x3.topleft.fill", "plus.app.fill", "link", "hand.thumbsup.fill"]
     let tabBarNames = ["Today", "All", "", "Share", "Done"]
 
@@ -109,32 +106,37 @@ struct TabBarView: View {
             }
             Spacer()
             HStack{
+                Spacer()
                 ForEach(0..<5) { num in
-                    Button(action: {
-                        isActive = false
-                        if num == 2 {
-                            shouldShowActionSheet.toggle()
-                            return
-                        }
-                        selectedIndex = num
-                    }, label: {
-                        Spacer()
-                        if num == 2 {
+                    if num == 2 {
+                        Image(systemName: tabBarImangeNames[num])
+                            .font(.system(size: 30, weight: .light))
+                            .foregroundColor(Color(.label))
+                            .gesture(
+                                TapGesture()
+                                    .onEnded { _ in
+                                        isActive = false
+                                        shouldShowActionSheet.toggle()
+                                    }
+                            )
+                    } else {
+                        VStack {
                             Image(systemName: tabBarImangeNames[num])
-                                .font(.system(size: 44, weight: .bold))
-                                .foregroundColor(.blue)
-                        } else {
-                            VStack {
-                                Image(systemName: tabBarImangeNames[num])
-                                    .font(.system(size: 24, weight: .bold))
-                                    .foregroundColor(selectedIndex == num ? Color(.label) : Color(.tertiaryLabel))
-                                Text(tabBarNames[num])
-                                    .font(.system(size: 12, weight: .bold))
-                                    .foregroundColor(selectedIndex == num ? Color(.label) : Color(.tertiaryLabel))
-                            }
+                                .font(.system(size: 18, weight: .light))
+                                .foregroundColor(selectedIndex == num ? Color(.label) : Color(.tertiaryLabel))
+                            Text(tabBarNames[num])
+                                .font(.system(size: 9, weight: .light))
+                                .foregroundColor(selectedIndex == num ? Color(.label) : Color(.tertiaryLabel))
                         }
-                        Spacer()
-                    })
+                        .gesture(
+                            TapGesture()
+                                .onEnded { _ in
+                                    isActive = false
+                                    selectedIndex = num
+                                }
+                        )
+                    }
+                    Spacer()
                 }
             }
         }

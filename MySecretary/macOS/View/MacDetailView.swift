@@ -8,30 +8,16 @@
 import SwiftUI
 
 struct MacDetailView: View {
+    // MARK: View
     var body: some View {
-        List {
+        ScrollView(.vertical, showsIndicators: false) {
             MacContentCell()
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-            Text("222")
-        }.navigationTitle("Todo") 
+        }
+        .navigationTitle("Todo") 
     }
 }
 
-struct MacContentCell: View {
-    @Environment(\.colorScheme) var colorScheme
-    
-    var body: some View {
-        Text("My Secretary")
-    }
-}
-
+// MARK: Preview
 struct MacDetailView_Previews: PreviewProvider {
     static var previews: some View {
         MacDetailView()
