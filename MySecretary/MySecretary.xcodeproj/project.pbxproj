@@ -40,6 +40,44 @@
 		15D99FCD260A3CB800AB0714 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15D99FCB260A3CB800AB0714 /* GoogleService-Info.plist */; };
 		15E6E11B25FA86F300D14BED /* MacDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6E11A25FA86F300D14BED /* MacDetailView.swift */; };
 		15E6E11C25FA86F300D14BED /* MacDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E6E11A25FA86F300D14BED /* MacDetailView.swift */; };
+		15FA476A26C40687008C1DEC /* ComicRelief.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475726C40686008C1DEC /* ComicRelief.ttf */; };
+		15FA476B26C40687008C1DEC /* ComicRelief.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475726C40686008C1DEC /* ComicRelief.ttf */; };
+		15FA476C26C40687008C1DEC /* dovemayo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475826C40686008C1DEC /* dovemayo.otf */; };
+		15FA476D26C40687008C1DEC /* dovemayo.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475826C40686008C1DEC /* dovemayo.otf */; };
+		15FA476E26C40687008C1DEC /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475926C40686008C1DEC /* NotoSansCJKkr-Medium.otf */; };
+		15FA476F26C40687008C1DEC /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475926C40686008C1DEC /* NotoSansCJKkr-Medium.otf */; };
+		15FA477026C40687008C1DEC /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475A26C40686008C1DEC /* NotoSansCJKkr-Black.otf */; };
+		15FA477126C40687008C1DEC /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475A26C40686008C1DEC /* NotoSansCJKkr-Black.otf */; };
+		15FA477226C40687008C1DEC /* Nexa Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475B26C40686008C1DEC /* Nexa Light.otf */; };
+		15FA477326C40687008C1DEC /* Nexa Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475B26C40686008C1DEC /* Nexa Light.otf */; };
+		15FA477426C40687008C1DEC /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475C26C40686008C1DEC /* NotoSansCJKkr-Light.otf */; };
+		15FA477526C40687008C1DEC /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475C26C40686008C1DEC /* NotoSansCJKkr-Light.otf */; };
+		15FA477626C40687008C1DEC /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475D26C40686008C1DEC /* NanumSquareRoundR.ttf */; };
+		15FA477726C40687008C1DEC /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475D26C40686008C1DEC /* NanumSquareRoundR.ttf */; };
+		15FA477826C40687008C1DEC /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475E26C40686008C1DEC /* NanumPen.otf */; };
+		15FA477926C40687008C1DEC /* NanumPen.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475E26C40686008C1DEC /* NanumPen.otf */; };
+		15FA477A26C40687008C1DEC /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475F26C40686008C1DEC /* GmarketSansMedium.otf */; };
+		15FA477B26C40687008C1DEC /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA475F26C40686008C1DEC /* GmarketSansMedium.otf */; };
+		15FA477C26C40687008C1DEC /* LibreBodoni-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476026C40686008C1DEC /* LibreBodoni-Bold.otf */; };
+		15FA477D26C40687008C1DEC /* LibreBodoni-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476026C40686008C1DEC /* LibreBodoni-Bold.otf */; };
+		15FA477E26C40687008C1DEC /* Nexa Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476126C40687008C1DEC /* Nexa Bold.otf */; };
+		15FA477F26C40687008C1DEC /* Nexa Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476126C40687008C1DEC /* Nexa Bold.otf */; };
+		15FA478026C40687008C1DEC /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476226C40687008C1DEC /* NotoSansCJKkr-Regular.otf */; };
+		15FA478126C40687008C1DEC /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476226C40687008C1DEC /* NotoSansCJKkr-Regular.otf */; };
+		15FA478226C40687008C1DEC /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476326C40687008C1DEC /* NotoSansCJKkr-Thin.otf */; };
+		15FA478326C40687008C1DEC /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476326C40687008C1DEC /* NotoSansCJKkr-Thin.otf */; };
+		15FA478426C40687008C1DEC /* ArchitectsDaughter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476426C40687008C1DEC /* ArchitectsDaughter.ttf */; };
+		15FA478526C40687008C1DEC /* ArchitectsDaughter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476426C40687008C1DEC /* ArchitectsDaughter.ttf */; };
+		15FA478626C40687008C1DEC /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476526C40687008C1DEC /* NotoSansCJKkr-DemiLight.otf */; };
+		15FA478726C40687008C1DEC /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476526C40687008C1DEC /* NotoSansCJKkr-DemiLight.otf */; };
+		15FA478826C40687008C1DEC /* NotoSansMonoCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476626C40687008C1DEC /* NotoSansMonoCJKkr-Regular.otf */; };
+		15FA478926C40687008C1DEC /* NotoSansMonoCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476626C40687008C1DEC /* NotoSansMonoCJKkr-Regular.otf */; };
+		15FA478A26C40687008C1DEC /* NotoSansMonoCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476726C40687008C1DEC /* NotoSansMonoCJKkr-Bold.otf */; };
+		15FA478B26C40687008C1DEC /* NotoSansMonoCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476726C40687008C1DEC /* NotoSansMonoCJKkr-Bold.otf */; };
+		15FA478C26C40687008C1DEC /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476826C40687008C1DEC /* NotoSansCJKkr-Bold.otf */; };
+		15FA478D26C40687008C1DEC /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476826C40687008C1DEC /* NotoSansCJKkr-Bold.otf */; };
+		15FA478E26C40687008C1DEC /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476926C40687008C1DEC /* Poppins-Regular.ttf */; };
+		15FA478F26C40687008C1DEC /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476926C40687008C1DEC /* Poppins-Regular.ttf */; };
 		4E885AAD64FB12FCFE9021BF /* Pods_MySecretary__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2F31C7602FDCC0CA0DA466 /* Pods_MySecretary__iOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +128,25 @@
 		15D99FCB260A3CB800AB0714 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15D9A023260B77A800AB0714 /* MySecretary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySecretary.entitlements; sourceTree = "<group>"; };
 		15E6E11A25FA86F300D14BED /* MacDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDetailView.swift; sourceTree = "<group>"; };
+		15FA475726C40686008C1DEC /* ComicRelief.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ComicRelief.ttf; sourceTree = "<group>"; };
+		15FA475826C40686008C1DEC /* dovemayo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dovemayo.otf; sourceTree = "<group>"; };
+		15FA475926C40686008C1DEC /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		15FA475A26C40686008C1DEC /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
+		15FA475B26C40686008C1DEC /* Nexa Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Light.otf"; sourceTree = "<group>"; };
+		15FA475C26C40686008C1DEC /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
+		15FA475D26C40686008C1DEC /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundR.ttf; sourceTree = "<group>"; };
+		15FA475E26C40686008C1DEC /* NanumPen.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumPen.otf; sourceTree = "<group>"; };
+		15FA475F26C40686008C1DEC /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
+		15FA476026C40686008C1DEC /* LibreBodoni-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LibreBodoni-Bold.otf"; sourceTree = "<group>"; };
+		15FA476126C40687008C1DEC /* Nexa Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nexa Bold.otf"; sourceTree = "<group>"; };
+		15FA476226C40687008C1DEC /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		15FA476326C40687008C1DEC /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
+		15FA476426C40687008C1DEC /* ArchitectsDaughter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArchitectsDaughter.ttf; sourceTree = "<group>"; };
+		15FA476526C40687008C1DEC /* NotoSansCJKkr-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-DemiLight.otf"; sourceTree = "<group>"; };
+		15FA476626C40687008C1DEC /* NotoSansMonoCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		15FA476726C40687008C1DEC /* NotoSansMonoCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		15FA476826C40687008C1DEC /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		15FA476926C40687008C1DEC /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		16490043D17C0D21592F6C00 /* Pods-MySecretary (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySecretary (macOS).release.xcconfig"; path = "Target Support Files/Pods-MySecretary (macOS)/Pods-MySecretary (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		5B258E3D437C1110288167BB /* Pods-MySecretary (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySecretary (iOS).release.xcconfig"; path = "Target Support Files/Pods-MySecretary (iOS)/Pods-MySecretary (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		876F05EE0C59F65CDC70A863 /* Pods_MySecretary__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySecretary__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +284,7 @@
 		15BE8CD725F7CD810040AECB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				15FA475626C40674008C1DEC /* Font */,
 				15BE8CD825F7CD810040AECB /* MySecretaryApp.swift */,
 				15BE8CD925F7CD810040AECB /* ContentView.swift */,
 				15D99FC625FDB34B00AB0714 /* Model */,
@@ -312,6 +370,32 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		15FA475626C40674008C1DEC /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				15FA476426C40687008C1DEC /* ArchitectsDaughter.ttf */,
+				15FA475726C40686008C1DEC /* ComicRelief.ttf */,
+				15FA475826C40686008C1DEC /* dovemayo.otf */,
+				15FA475F26C40686008C1DEC /* GmarketSansMedium.otf */,
+				15FA476026C40686008C1DEC /* LibreBodoni-Bold.otf */,
+				15FA475E26C40686008C1DEC /* NanumPen.otf */,
+				15FA475D26C40686008C1DEC /* NanumSquareRoundR.ttf */,
+				15FA476126C40687008C1DEC /* Nexa Bold.otf */,
+				15FA475B26C40686008C1DEC /* Nexa Light.otf */,
+				15FA475A26C40686008C1DEC /* NotoSansCJKkr-Black.otf */,
+				15FA476826C40687008C1DEC /* NotoSansCJKkr-Bold.otf */,
+				15FA476526C40687008C1DEC /* NotoSansCJKkr-DemiLight.otf */,
+				15FA475C26C40686008C1DEC /* NotoSansCJKkr-Light.otf */,
+				15FA475926C40686008C1DEC /* NotoSansCJKkr-Medium.otf */,
+				15FA476226C40687008C1DEC /* NotoSansCJKkr-Regular.otf */,
+				15FA476326C40687008C1DEC /* NotoSansCJKkr-Thin.otf */,
+				15FA476726C40687008C1DEC /* NotoSansMonoCJKkr-Bold.otf */,
+				15FA476626C40687008C1DEC /* NotoSansMonoCJKkr-Regular.otf */,
+				15FA476926C40687008C1DEC /* Poppins-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		85ACC664D7C2DDD1E34E55BD /* Frameworks */ = {
@@ -451,8 +535,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FA478426C40687008C1DEC /* ArchitectsDaughter.ttf in Resources */,
+				15FA478C26C40687008C1DEC /* NotoSansCJKkr-Bold.otf in Resources */,
+				15FA478226C40687008C1DEC /* NotoSansCJKkr-Thin.otf in Resources */,
 				15BE8D0525F7CD820040AECB /* Assets.xcassets in Resources */,
+				15FA478026C40687008C1DEC /* NotoSansCJKkr-Regular.otf in Resources */,
 				15D99FCC260A3CB800AB0714 /* GoogleService-Info.plist in Resources */,
+				15FA477026C40687008C1DEC /* NotoSansCJKkr-Black.otf in Resources */,
+				15FA478826C40687008C1DEC /* NotoSansMonoCJKkr-Regular.otf in Resources */,
+				15FA476A26C40687008C1DEC /* ComicRelief.ttf in Resources */,
+				15FA478E26C40687008C1DEC /* Poppins-Regular.ttf in Resources */,
+				15FA476C26C40687008C1DEC /* dovemayo.otf in Resources */,
+				15FA477626C40687008C1DEC /* NanumSquareRoundR.ttf in Resources */,
+				15FA477A26C40687008C1DEC /* GmarketSansMedium.otf in Resources */,
+				15FA478A26C40687008C1DEC /* NotoSansMonoCJKkr-Bold.otf in Resources */,
+				15FA477426C40687008C1DEC /* NotoSansCJKkr-Light.otf in Resources */,
+				15FA476E26C40687008C1DEC /* NotoSansCJKkr-Medium.otf in Resources */,
+				15FA477226C40687008C1DEC /* Nexa Light.otf in Resources */,
+				15FA477C26C40687008C1DEC /* LibreBodoni-Bold.otf in Resources */,
+				15FA478626C40687008C1DEC /* NotoSansCJKkr-DemiLight.otf in Resources */,
+				15FA477826C40687008C1DEC /* NanumPen.otf in Resources */,
+				15FA477E26C40687008C1DEC /* Nexa Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,8 +563,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FA478526C40687008C1DEC /* ArchitectsDaughter.ttf in Resources */,
+				15FA478D26C40687008C1DEC /* NotoSansCJKkr-Bold.otf in Resources */,
+				15FA478326C40687008C1DEC /* NotoSansCJKkr-Thin.otf in Resources */,
 				15BE8D0625F7CD820040AECB /* Assets.xcassets in Resources */,
+				15FA478126C40687008C1DEC /* NotoSansCJKkr-Regular.otf in Resources */,
 				15D99FCD260A3CB800AB0714 /* GoogleService-Info.plist in Resources */,
+				15FA477126C40687008C1DEC /* NotoSansCJKkr-Black.otf in Resources */,
+				15FA478926C40687008C1DEC /* NotoSansMonoCJKkr-Regular.otf in Resources */,
+				15FA476B26C40687008C1DEC /* ComicRelief.ttf in Resources */,
+				15FA478F26C40687008C1DEC /* Poppins-Regular.ttf in Resources */,
+				15FA476D26C40687008C1DEC /* dovemayo.otf in Resources */,
+				15FA477726C40687008C1DEC /* NanumSquareRoundR.ttf in Resources */,
+				15FA477B26C40687008C1DEC /* GmarketSansMedium.otf in Resources */,
+				15FA478B26C40687008C1DEC /* NotoSansMonoCJKkr-Bold.otf in Resources */,
+				15FA477526C40687008C1DEC /* NotoSansCJKkr-Light.otf in Resources */,
+				15FA476F26C40687008C1DEC /* NotoSansCJKkr-Medium.otf in Resources */,
+				15FA477326C40687008C1DEC /* Nexa Light.otf in Resources */,
+				15FA477D26C40687008C1DEC /* LibreBodoni-Bold.otf in Resources */,
+				15FA478726C40687008C1DEC /* NotoSansCJKkr-DemiLight.otf in Resources */,
+				15FA477926C40687008C1DEC /* NanumPen.otf in Resources */,
+				15FA477F26C40687008C1DEC /* Nexa Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
