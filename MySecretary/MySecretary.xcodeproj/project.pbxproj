@@ -78,6 +78,13 @@
 		15FA478D26C40687008C1DEC /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476826C40687008C1DEC /* NotoSansCJKkr-Bold.otf */; };
 		15FA478E26C40687008C1DEC /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476926C40687008C1DEC /* Poppins-Regular.ttf */; };
 		15FA478F26C40687008C1DEC /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15FA476926C40687008C1DEC /* Poppins-Regular.ttf */; };
+		15FA479126C6875F008C1DEC /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA479026C6875F008C1DEC /* PersistenceController.swift */; };
+		15FA479226C6875F008C1DEC /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA479026C6875F008C1DEC /* PersistenceController.swift */; };
+		15FA479526C687B3008C1DEC /* MySecretary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15FA479326C687B3008C1DEC /* MySecretary.xcdatamodeld */; };
+		15FA479626C687B3008C1DEC /* MySecretary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15FA479326C687B3008C1DEC /* MySecretary.xcdatamodeld */; };
+		15FA479826C68A7E008C1DEC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FA479726C68A7E008C1DEC /* CloudKit.framework */; };
+		15FA479D26C6BAA5008C1DEC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA479C26C6BAA5008C1DEC /* ItemCell.swift */; };
+		15FA479E26C6BAA5008C1DEC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FA479C26C6BAA5008C1DEC /* ItemCell.swift */; };
 		4E885AAD64FB12FCFE9021BF /* Pods_MySecretary__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2F31C7602FDCC0CA0DA466 /* Pods_MySecretary__iOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +154,10 @@
 		15FA476726C40687008C1DEC /* NotoSansMonoCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		15FA476826C40687008C1DEC /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
 		15FA476926C40687008C1DEC /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		15FA479026C6875F008C1DEC /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		15FA479426C687B3008C1DEC /* MySecretary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MySecretary.xcdatamodel; sourceTree = "<group>"; };
+		15FA479726C68A7E008C1DEC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		15FA479C26C6BAA5008C1DEC /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		16490043D17C0D21592F6C00 /* Pods-MySecretary (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySecretary (macOS).release.xcconfig"; path = "Target Support Files/Pods-MySecretary (macOS)/Pods-MySecretary (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		5B258E3D437C1110288167BB /* Pods-MySecretary (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySecretary (iOS).release.xcconfig"; path = "Target Support Files/Pods-MySecretary (iOS)/Pods-MySecretary (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		876F05EE0C59F65CDC70A863 /* Pods_MySecretary__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MySecretary__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E885AAD64FB12FCFE9021BF /* Pods_MySecretary__iOS_.framework in Frameworks */,
+				15FA479826C68A7E008C1DEC /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				15836DB426C15A1400222B42 /* ContentCell.swift */,
+				15FA479C26C6BAA5008C1DEC /* ItemCell.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -368,6 +381,8 @@
 		15D99FC625FDB34B00AB0714 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				15FA479026C6875F008C1DEC /* PersistenceController.swift */,
+				15FA479326C687B3008C1DEC /* MySecretary.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +416,7 @@
 		85ACC664D7C2DDD1E34E55BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15FA479726C68A7E008C1DEC /* CloudKit.framework */,
 				9C2F31C7602FDCC0CA0DA466 /* Pods_MySecretary__iOS_.framework */,
 				876F05EE0C59F65CDC70A863 /* Pods_MySecretary__macOS_.framework */,
 			);
@@ -694,10 +710,13 @@
 				157BD9BD267A45BD002E67A5 /* AppleSignInButtom.swift in Sources */,
 				157BD9C6267E08B2002E67A5 /* SignOutButton.swift in Sources */,
 				15BE8D1A25F7D1800040AECB /* DetailView.swift in Sources */,
+				15FA479D26C6BAA5008C1DEC /* ItemCell.swift in Sources */,
 				157BD9C3267DA3B4002E67A5 /* UserInfoView.swift in Sources */,
 				15836DB926C15AAA00222B42 /* MacContentCell.swift in Sources */,
 				15836DB526C15A1400222B42 /* ContentCell.swift in Sources */,
+				15FA479526C687B3008C1DEC /* MySecretary.xcdatamodeld in Sources */,
 				15E6E11B25FA86F300D14BED /* MacDetailView.swift in Sources */,
+				15FA479126C6875F008C1DEC /* PersistenceController.swift in Sources */,
 				15BE8D2E25F7D2840040AECB /* TabBarView.swift in Sources */,
 				15AFEF17268E086600DA6545 /* AddListView.swift in Sources */,
 				157BD9BF267A45FA002E67A5 /* SignInView.swift in Sources */,
@@ -718,10 +737,13 @@
 				157BD9C0267CE352002E67A5 /* SignInView.swift in Sources */,
 				15BE8D2425F7D26E0040AECB /* SideBarView.swift in Sources */,
 				15BE8D0225F7CD820040AECB /* MySecretaryApp.swift in Sources */,
+				15FA479626C687B3008C1DEC /* MySecretary.xcdatamodeld in Sources */,
 				15AFEF1826931D7A00DA6545 /* AddListView.swift in Sources */,
 				15E6E11C25FA86F300D14BED /* MacDetailView.swift in Sources */,
+				15FA479226C6875F008C1DEC /* PersistenceController.swift in Sources */,
 				157BD9C1267CE38C002E67A5 /* AppleSignInButtom.swift in Sources */,
 				15AFEF1B269320FB00DA6545 /* UserInfoView.swift in Sources */,
+				15FA479E26C6BAA5008C1DEC /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,6 +1127,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		15FA479326C687B3008C1DEC /* MySecretary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				15FA479426C687B3008C1DEC /* MySecretary.xcdatamodel */,
+			);
+			currentVersion = 15FA479426C687B3008C1DEC /* MySecretary.xcdatamodel */;
+			path = MySecretary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 15BE8CD325F7CD810040AECB /* Project object */;
 }

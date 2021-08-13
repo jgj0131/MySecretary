@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SideBarView: View {
-    @Binding var presentingModal: Bool
+//    @Binding var presentingModal: Bool
     @State private var selectedIndex = 0
     @State private var resetNavigationID = UUID()
     @State private var shouldShowActionSheet = false
@@ -67,9 +67,9 @@ struct SideBarView: View {
                     .frame(width: 250, height: 50, alignment: .center)
                 #endif
             })
-                .sheet(isPresented: $shouldShowActionSheet, content: {
-                    AddListView(shouldShowActionSheet: $shouldShowActionSheet)
-                })
+//                .sheet(isPresented: $shouldShowActionSheet, content: {
+//                    AddListView(shouldShowActionSheet: $shouldShowActionSheet)
+//                })
                 .frame(width: 250, height: 50, alignment: .center)
                 .overlay(
                     RoundedRectangle(cornerRadius: 5)
@@ -96,7 +96,7 @@ struct SideBarView: View {
                     }
                 })
             if selectedIndex == -1 {
-                UserInfoView(presentingModal: $presentingModal, selection: $selectedIndex, rootIsActive: $isActive)
+                UserInfoView()
                     .navigationBarTitle("Setting", displayMode: .large)
             } else {
                 DetailView()
@@ -116,10 +116,10 @@ struct SideBarView_Previews: PreviewProvider {
     static var previews: some View {
         #if os(iOS)
         Group {
-            SideBarView(presentingModal: .constant(true)).previewDevice("iPad Pro (12.9-inch) (4th generation)")
+            SideBarView().previewDevice("iPad Pro (12.9-inch) (4th generation)")
         }
         #else
-        SideBarView(presentingModal: .constant(true)).previewDevice("Mac")
+        SideBarView().previewDevice("Mac")
         #endif
     }
 }

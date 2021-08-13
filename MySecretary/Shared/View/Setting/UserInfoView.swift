@@ -9,34 +9,24 @@ import SwiftUI
 import FirebaseAuth
 
 struct UserInfoView: View {
-    @Binding var presentingModal: Bool
-    @Binding var selection: Int
-    @Binding var rootIsActive: Bool
     
     var body: some View {
         #if os(iOS)
         List {
-            Section(header: Text("Thema")/*, footer: Text("Footer1")*/ ) {
+            Section(header: Text("Thema")) {
                 Text("🎨 테마 변경")
                 Text("🔠 폰트 변경")
             }
-            Section(header: Text("Sign Out")) {
-                SignOutButton(presentingModal: $presentingModal, selection: self.$selection, shouldPopToRootView: self.$rootIsActive)
-            }
         }
-        
         .listStyle(InsetGroupedListStyle())
         .onAppear(perform: {
             UITableView.appearance().isScrollEnabled = false
         })
         #else
         List {
-            Section(header: Text("Thema")/*, footer: Text("Footer1")*/ ) {
+            Section(header: Text("Thema")) {
                 Text("🎨 테마 변경")
                 Text("🔠 폰트 변경")
-            }
-            Section(header: Text("Sign Out")) {
-                SignOutButton(presentingModal: $presentingModal, selection: self.$selection, shouldPopToRootView: self.$rootIsActive)
             }
         }
         #endif
@@ -45,6 +35,6 @@ struct UserInfoView: View {
 
 struct UserInfo_Previews: PreviewProvider {
     static var previews: some View {
-        UserInfoView(presentingModal: .constant(true), selection: .constant(0), rootIsActive: .constant(true))
+        UserInfoView()
     }
 }

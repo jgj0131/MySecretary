@@ -10,6 +10,7 @@ import AuthenticationServices
 
 struct DetailView: View {
     // MARK: View
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             Spacer().frame(height:10)
@@ -22,8 +23,8 @@ struct DetailView: View {
 }
 
 // MARK: Preview
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView()
-    }
-}
+//struct DetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailView(items: [Item()])
+//    }
+//}

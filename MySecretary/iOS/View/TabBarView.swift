@@ -9,96 +9,78 @@ import SwiftUI
 
 struct TabBarView: View {
     // MARK: Property
-    @Binding var presentingModal: Bool
+//    @Binding var presentingModal: Bool
     @State private var selectedIndex = 0
     @State private var resetNavigationID = UUID()
-    @State private var shouldShowActionSheet = false
+//    @State private var shouldShowActionSheet = false
     @State var isActive: Bool = false
+    @State private var isShowingAddView = false
     
-    let tabBarImangeNames = ["calendar", "square.grid.3x3.topleft.fill", "plus.app.fill", "link", "hand.thumbsup.fill"]
-    let tabBarNames = ["Today", "All", "", "Share", "Done"]
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.date, ascending: true)],
+        animation: .default)
+    private var items: FetchedResults<Item>
+    
+//    let tabBarImangeNames = ["calendar", "square.grid.3x3.topleft.fill", "plus.app.fill", "link", "hand.thumbsup.fill"]
+    let tabBarImangeNames = ["calendar", "square.grid.3x3.topleft.fill", "plus.app.fill", "hands.clap", "gearshape"]
+//    let tabBarNames = ["Today", "All", "", "Share", "Done"]
+    let tabBarNames = ["TODAY", "ALL", "", "DONE", "SETTING"]
 
     // MARK: View
     var body: some View {
         VStack {
             ZStack {
                 Spacer()
-                    .fullScreenCover(isPresented: $shouldShowActionSheet, content: {
-                        AddListView(shouldShowActionSheet: $shouldShowActionSheet)
+                    .sheet(isPresented: $isShowingAddView, content: {
+                        AddListView(onAdd: { contents, image, date in
+                            isShowingAddView = false
+                            addItem(contents: contents, image: image, date: date)
+                        }, onCancel: { isShowingAddView = false })
                     })
                 
                 switch selectedIndex {
                 case 0:
                     NavigationView {
-                        DetailView()
-                            .listStyle(InsetGroupedListStyle())
-                            .navigationBarTitle("Today")
-                            .toolbar(content: {
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    NavigationLink(
-                                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selectedIndex, rootIsActive: $isActive),
-                                        isActive: self.$isActive
-                                    ) {
-                                        Image(systemName: "gear")
-                                            .font(.system(size: 24, weight: .bold))
-                                            .foregroundColor(Color(.secondaryLabel))
-                                    }.isDetailLink(false)
-                                }
-                            })
+                        ScrollView(.vertical, showsIndicators: false) {
+                            Spacer().frame(height: 10)
+                            ForEach(items) { item in
+                                ItemCell(contents: item.contents ?? "None")
+                                Spacer().frame(height: 10)
+                            }
+                            .onDelete(perform: deleteItem)
+                        }
+                        .navigationBarTitle("Today")
                     }.id(self.resetNavigationID)
                 case 1:
                     NavigationView {
-                        DetailView()
-                            .listStyle(InsetGroupedListStyle())
-                            .navigationTitle("All")
-                            .toolbar(content: {
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    NavigationLink(
-                                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selectedIndex, rootIsActive: $isActive),
-                                        isActive: self.$isActive
-                                    ) {
-                                        Image(systemName: "gear")
-                                            .font(.system(size: 24, weight: .bold))
-                                            .foregroundColor(Color(.secondaryLabel))
-                                    }.isDetailLink(false)
-                                }
-                            })
+                        ScrollView(.vertical, showsIndicators: false) {
+                            Spacer().frame(height: 10)
+                            ForEach(items) { item in
+                                ItemCell(contents: item.contents ?? "None")
+                                Spacer().frame(height: 10)
+                            }
+                            .onDelete(perform: deleteItem)
+                        }
+                        .navigationBarTitle("All")
                     }.id(self.resetNavigationID)
                 case 3:
                     NavigationView {
-                        DetailView()
-                            .listStyle(InsetGroupedListStyle())
-                            .navigationTitle("Share")
-                            .toolbar(content: {
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    NavigationLink(
-                                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selectedIndex, rootIsActive: $isActive),
-                                        isActive: self.$isActive
-                                    ) {
-                                        Image(systemName: "gear")
-                                            .font(.system(size: 24, weight: .bold))
-                                            .foregroundColor(Color(.secondaryLabel))
-                                    }.isDetailLink(false)
-                                }
-                            })
+                        ScrollView(.vertical, showsIndicators: false) {
+                            Spacer().frame(height: 10)
+                            ForEach(items) { item in
+                                ItemCell(contents: item.contents ?? "None")
+                                Spacer().frame(height: 10)
+                            }
+                            .onDelete(perform: deleteItem)
+                        }
+                        .navigationBarTitle("Done")
                     }.id(self.resetNavigationID)
                 case 4:
                     NavigationView {
-                        DetailView()
+                        UserInfoView()
                             .listStyle(InsetGroupedListStyle())
-                            .navigationTitle("Done")
-                            .toolbar(content: {
-                                ToolbarItem(placement: .navigationBarTrailing) {
-                                    NavigationLink(
-                                        destination: UserInfoView(presentingModal: $presentingModal, selection: $selectedIndex, rootIsActive: $isActive),
-                                        isActive: self.$isActive
-                                    ) {
-                                        Image(systemName: "gear")
-                                            .font(.system(size: 24, weight: .bold))
-                                            .foregroundColor(Color(.secondaryLabel))
-                                    }.isDetailLink(false)
-                                }
-                            })
+                            .navigationTitle("Setting")
                     }.id(self.resetNavigationID)
                 default:
                     Text("")
@@ -116,7 +98,7 @@ struct TabBarView: View {
                                 TapGesture()
                                     .onEnded { _ in
                                         isActive = false
-                                        shouldShowActionSheet.toggle()
+                                        isShowingAddView.toggle()
                                     }
                             )
                     } else {
@@ -138,14 +120,46 @@ struct TabBarView: View {
                     }
                     Spacer()
                 }
+                .onDelete(perform: deleteItem)
             }
         }
     }
 }
 
+// MARK: Extension
+extension TabBarView {
+    // MARK: Custom Method
+    /// Item을 추가하는 Method
+    private func addItem(contents: String, image: UIImage?, date: Date?) {
+        let newItem = Item(context: viewContext)
+        newItem.contents = contents
+        newItem.image = image
+        newItem.date = date
+
+        do {
+            try viewContext.save()
+        } catch {
+            fatalError("Error: \(error)")
+        }
+    }
+    /// Item을 제거하는 Method
+    private func deleteItem(offsets: IndexSet) {
+        offsets.map { items[$0] }.forEach(viewContext.delete)
+
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+
+}
+
+
 // MARK: Preview
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(presentingModal: .constant(true))
+        TabBarView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
