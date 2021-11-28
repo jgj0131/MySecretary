@@ -14,8 +14,6 @@
 		157BD9C1267CE38C002E67A5 /* AppleSignInButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BC267A45BD002E67A5 /* AppleSignInButtom.swift */; };
 		157BD9C3267DA3B4002E67A5 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9C2267DA3B4002E67A5 /* UserInfoView.swift */; };
 		157BD9C6267E08B2002E67A5 /* SignOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9C5267E08B2002E67A5 /* SignOutButton.swift */; };
-		15836DB526C15A1400222B42 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15836DB426C15A1400222B42 /* ContentCell.swift */; };
-		15836DB626C15A1400222B42 /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15836DB426C15A1400222B42 /* ContentCell.swift */; };
 		15836DB926C15AAA00222B42 /* MacContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15836DB826C15AAA00222B42 /* MacContentCell.swift */; };
 		15836DBA26C15AAA00222B42 /* MacContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15836DB826C15AAA00222B42 /* MacContentCell.swift */; };
 		15AFEF15268DFD2100DA6545 /* EmailSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFEF14268DFD2100DA6545 /* EmailSignInButton.swift */; };
@@ -111,7 +109,6 @@
 		157BD9BE267A45FA002E67A5 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		157BD9C2267DA3B4002E67A5 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		157BD9C5267E08B2002E67A5 /* SignOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutButton.swift; sourceTree = "<group>"; };
-		15836DB426C15A1400222B42 /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		15836DB826C15AAA00222B42 /* MacContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacContentCell.swift; sourceTree = "<group>"; };
 		15AFEF14268DFD2100DA6545 /* EmailSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignInButton.swift; sourceTree = "<group>"; };
 		15AFEF16268E086600DA6545 /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
@@ -214,7 +211,8 @@
 		157BD9B8267A44FB002E67A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				15E6E11A25FA86F300D14BED /* MacDetailView.swift */,
+				1584177526DD0C810091FDFC /* Views */,
+				1584177626DD0C8F0091FDFC /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,8 +220,7 @@
 		157BD9B9267A4518002E67A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				15BE8D2D25F7D2840040AECB /* TabBarView.swift */,
-				15BE8D1925F7D1800040AECB /* DetailView.swift */,
+				1584177726DD0CA90091FDFC /* Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,7 +246,6 @@
 		15836DB326C159B100222B42 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				15836DB426C15A1400222B42 /* ContentCell.swift */,
 				15FA479C26C6BAA5008C1DEC /* ItemCell.swift */,
 			);
 			path = Category;
@@ -258,7 +254,6 @@
 		15836DB726C15A9000222B42 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				15836DB826C15AAA00222B42 /* MacContentCell.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -277,6 +272,52 @@
 				157BD9C2267DA3B4002E67A5 /* UserInfoView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		1584177326DD0BC60091FDFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15BE8CD925F7CD810040AECB /* ContentView.swift */,
+				15AFEF16268E086600DA6545 /* AddListView.swift */,
+				15BE8D2225F7D26E0040AECB /* SideBarView.swift */,
+				15836DBC26C15B0600222B42 /* Setting */,
+				15836DBB26C15AFC00222B42 /* Sign */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1584177426DD0C120091FDFC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				15836DB226C1599F00222B42 /* Sign */,
+				15836DB326C159B100222B42 /* Category */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1584177526DD0C810091FDFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15E6E11A25FA86F300D14BED /* MacDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1584177626DD0C8F0091FDFC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				15836DB826C15AAA00222B42 /* MacContentCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1584177726DD0CA90091FDFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15BE8D2D25F7D2840040AECB /* TabBarView.swift */,
+				15BE8D1925F7D1800040AECB /* DetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		15BE8CD225F7CD810040AECB = {
@@ -299,7 +340,6 @@
 			children = (
 				15FA475626C40674008C1DEC /* Font */,
 				15BE8CD825F7CD810040AECB /* MySecretaryApp.swift */,
-				15BE8CD925F7CD810040AECB /* ContentView.swift */,
 				15D99FC625FDB34B00AB0714 /* Model */,
 				15BE8D2025F7D1870040AECB /* View */,
 				15D99FC525FDB33E00AB0714 /* View Model */,
@@ -361,10 +401,8 @@
 		15BE8D2025F7D1870040AECB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				15836DBC26C15B0600222B42 /* Setting */,
-				15836DBB26C15AFC00222B42 /* Sign */,
-				15BE8D2225F7D26E0040AECB /* SideBarView.swift */,
-				15AFEF16268E086600DA6545 /* AddListView.swift */,
+				1584177326DD0BC60091FDFC /* Views */,
+				1584177426DD0C120091FDFC /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -372,8 +410,6 @@
 		15D99FC525FDB33E00AB0714 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				15836DB326C159B100222B42 /* Category */,
-				15836DB226C1599F00222B42 /* Sign */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -713,7 +749,6 @@
 				15FA479D26C6BAA5008C1DEC /* ItemCell.swift in Sources */,
 				157BD9C3267DA3B4002E67A5 /* UserInfoView.swift in Sources */,
 				15836DB926C15AAA00222B42 /* MacContentCell.swift in Sources */,
-				15836DB526C15A1400222B42 /* ContentCell.swift in Sources */,
 				15FA479526C687B3008C1DEC /* MySecretary.xcdatamodeld in Sources */,
 				15E6E11B25FA86F300D14BED /* MacDetailView.swift in Sources */,
 				15FA479126C6875F008C1DEC /* PersistenceController.swift in Sources */,
@@ -730,7 +765,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				15BE8D0425F7CD820040AECB /* ContentView.swift in Sources */,
-				15836DB626C15A1400222B42 /* ContentCell.swift in Sources */,
 				15836DBA26C15AAA00222B42 /* MacContentCell.swift in Sources */,
 				15AFEF1926931FA800DA6545 /* EmailSignInButton.swift in Sources */,
 				15AFEF1A26931FC500DA6545 /* SignOutButton.swift in Sources */,

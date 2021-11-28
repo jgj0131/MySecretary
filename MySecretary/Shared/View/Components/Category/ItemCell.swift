@@ -15,14 +15,14 @@ struct ItemCell: View {
             Text(contents)
                 .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
                 .frame(width: UIScreen.main.bounds.width - 40, alignment: .leading)
-                .foregroundColor(Color(.label))
+                .foregroundColor(.black)
                 .font(Font.custom("dovemayo", size: 18))
                 .multilineTextAlignment(.trailing)
         }
-        .background(Color(.systemBackground))
-        .cornerRadius(7.0)
+        .background(Color("navy").opacity(0.25))//Color(.systemBackground))
+        .cornerRadius(10.0)
         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-        .shadow(color: .blue, radius: 7, x: 1, y: 1)
+//        .shadow(color: .blue, radius: 7, x: 1, y: 1)
     }
 }
 

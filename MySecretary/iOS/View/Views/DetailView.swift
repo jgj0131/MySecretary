@@ -13,10 +13,10 @@ struct DetailView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            Spacer().frame(height:10)
-            ContentCell()
-            Spacer().frame(height:10)
-            ContentCell()
+//            Spacer().frame(height:10)
+//            ContentCell()
+//            Spacer().frame(height:10)
+//            ContentCell()
             Spacer()
         }
     }

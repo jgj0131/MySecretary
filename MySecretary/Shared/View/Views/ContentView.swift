@@ -13,12 +13,12 @@ struct ContentView: View {
     var body: some View {
         #if os(iOS)
         if UIDevice.current.userInterfaceIdiom == .phone {
-            TabBarView().accentColor(Color(UIColor.label))
+            TabBarView()
         } else {
-            SideBarView().accentColor(Color(UIColor.label))
+            SideBarView()
         }
         #else
-        SideBarView().accentColor(Color(NSColor.labelColor))
+        SideBarView()
         #endif
     }
 }
