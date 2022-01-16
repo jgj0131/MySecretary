@@ -10,11 +10,14 @@ import SwiftUI
 struct TabBarView: View {
     // MARK: Property
 //    @Binding var presentingModal: Bool
+    @State private var currentDate: Date = Date()
     @State private var selectedIndex = 0
     @State private var resetNavigationID = UUID()
 //    @State private var shouldShowActionSheet = false
     @State var isActive: Bool = false
     @State private var isShowingAddView = false
+    @State private var title = "Today"
+    @State private var color: Color = Color(UIColor.label)//("navy")
     
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
@@ -23,26 +26,46 @@ struct TabBarView: View {
     private var items: FetchedResults<Item>
     
 //    let tabBarImangeNames = ["calendar", "square.grid.3x3.topleft.fill", "plus.app.fill", "link", "hand.thumbsup.fill"]
-    let tabBarImangeNames = ["app.badge", "scroll", "plus.circle.fill", "hands.clap", "gearshape"]
+    let tabBarImangeNames = ["app.badge.fill", "calendar", "plus.circle.fill", "hands.clap.fill", "gearshape.fill"]
 
     // MARK: View
     var body: some View {
 //        NavigationView {
             ZStack {
-//                VStack {
-//                    Color("navy").opacity(0.5).frame(height: 50)
-//
-//                    Spacer().frame(height: 0)
-//
-//                    Color.white
-//                }.ignoresSafeArea(edges: .all)
-                Color.white.ignoresSafeArea(edges: .all)
+                Color(UIColor.systemBackground).ignoresSafeArea(edges: .all)
                 
                 VStack {
-                    Spacer().frame(height: 100)
+                    Spacer().frame(height: 20)
                     
                     switch selectedIndex {
                     case 0:
+                        VStack(spacing: 0) {
+                            Color(UIColor.systemBackground).frame(height: UIDevice.current.hasNotch ? 50 : 10)
+                            
+                            Text(title)
+                                .font(Font.custom("Nexa Bold", size: 30))
+                                .foregroundColor(Color.pink)
+                                .padding(.leading, 20)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .frame(height: 50)
+                            
+                            ScrollView(.vertical, showsIndicators: false) {
+                                Spacer().frame(height: 20)
+                                ForEach(items) { item in
+                                    ItemCell(contents: item.contents ?? "None")
+                                    Spacer().frame(height: 10)
+                                }
+                                .onDelete(perform: deleteItem)
+                            }
+                        }
+                        .onAppear(perform: {
+                            title = "Today"
+                        })
+                        .id(self.resetNavigationID)
+                    case 1:
+                        CalendarView(currentDate: $currentDate)
+                            .id(self.resetNavigationID)
+                    case 3:
                         ScrollView(.vertical, showsIndicators: false) {
                             Spacer().frame(height: 20)
                             ForEach(items) { item in
@@ -51,39 +74,16 @@ struct TabBarView: View {
                             }
                             .onDelete(perform: deleteItem)
                         }
-//                        .navigationBarTitle("Today")
-                        .id(self.resetNavigationID)
-                    case 1:
-                        ScrollView(.vertical, showsIndicators: false) {
-                            Spacer().frame(height: 10)
-                            ForEach(items) { item in
-                                ItemCell(contents: item.contents ?? "None")
-                                Spacer().frame(height: 10)
-                            }
-                            .onDelete(perform: deleteItem)
-                        }
-//                        .navigationBarTitle("All")
-                        .id(self.resetNavigationID)
-                    case 3:
-                        Text("")
-                            .frame(height: 0.01)
-                        
-                        Spacer().frame(height: 0.1)
-                        
-                        ScrollView(.vertical, showsIndicators: false) {
-                            Spacer().frame(height: 10)
-                            ForEach(items) { item in
-                                ItemCell(contents: item.contents ?? "None")
-                                Spacer().frame(height: 10)
-                            }
-                            .onDelete(perform: deleteItem)
-                        }
-//                        .navigationBarTitle("Done")
+                        .onAppear(perform: {
+                            title = "Done"
+                        })
                         .id(self.resetNavigationID)
                     case 4:
                         UserInfoView()
                             .listStyle(InsetGroupedListStyle())
-//                            .navigationTitle("Setting")
+                            .onAppear(perform: {
+                                title = "Setting"
+                            })
                             .id(self.resetNavigationID)
                     default:
                         Text("")
@@ -93,26 +93,8 @@ struct TabBarView: View {
                     
                     tabbar()
                 }
-//                .background(Color("mint"))//.ignoresSafeArea(edges: .all)
-                .background(Color.white)
-                
-//                VStack {
-//                    Spacer()
-//                    tabbar()
-//                }
-                
-                VStack {
-                    Text("Today")
-                        .font(Font.custom("Nexa Bold", size: 20))
-                        .padding(EdgeInsets(top: 100, leading: 20, bottom: 0, trailing: 0))
-                        .frame(width: UIScreen.main.bounds.width, height: 200, alignment: .topLeading)
-                        .foregroundColor(.black)
-                        .background(LinearGradient(gradient: Gradient(colors: [Color("navy").opacity(0.5), Color("navy").opacity(0)]), startPoint: .top, endPoint: .bottom)
-                                        .frame(width: UIScreen.main.bounds.width, height: 200, alignment: .center))
-
-                    Spacer()
-                }.ignoresSafeArea(edges: .top)
             }
+            .ignoresSafeArea(edges: [.top, .bottom])
             .sheet(isPresented: $isShowingAddView, content: {
                 AddListView(onAdd: { contents, image, date in
                     isShowingAddView = false
@@ -134,9 +116,12 @@ extension TabBarView {
                 ForEach(0..<5) { num in
                     if num == 2 {
                         Image(systemName: tabBarImangeNames[num])
-                            .font(.system(size: 40/*35*/, weight: .light))
+                            .font(.system(size: 35, weight: .light))
                             .imageScale(.large)
-                            .foregroundColor(Color("navy"))
+                            .foregroundColor(Color.pink)
+                            .background(Color(UIColor.systemBackground))
+                            .frame(width: 43, height: 43, alignment: .center)
+                            .cornerRadius(21.5)
                             .aspectRatio(contentMode: .fit)
                             .gesture(
                                 TapGesture()
@@ -145,34 +130,39 @@ extension TabBarView {
                                         isShowingAddView.toggle()
                                     }
                             )
+                            .shadow(color: .primary.opacity(0.3), radius: 2, x: 2, y: 2)
+                            .shadow(color: .gray.opacity(0.12), radius: 2, x: -1, y: -1)
+                            
                     } else {
-                        VStack {
-                            Image(systemName: tabBarImangeNames[num] + (selectedIndex == num ? ".fill" : "" ))
-                                .font(.system(size: 23/*18*/, weight: .light))
-                                .foregroundColor(Color("navy")/*selectedIndex == num ? Color.white : Color.gray*/)
+                        ZStack {
+                            Image(systemName: tabBarImangeNames[num])
+                                .font(.system(size: 23, weight: .light))
+                                .foregroundColor(.gray.opacity(0.1))
                                 .aspectRatio(contentMode: .fit)
+                            
+                            Image(systemName: tabBarImangeNames[num])
+                                .font(.system(size: 23, weight: .light))
+                                .foregroundColor(Color.pink.opacity(selectedIndex == num ? 1 : 0.25))
+                                .aspectRatio(contentMode: .fit)
+                                .gesture(
+                                    TapGesture()
+                                        .onEnded { _ in
+                                            isActive = false
+                                            selectedIndex = num
+                                        }
+                                )
                         }
-                        .gesture(
-                            TapGesture()
-                                .onEnded { _ in
-                                    isActive = false
-                                    selectedIndex = num
-                                }
-                        )
+                        
                     }
                     
                     Spacer()
                 }
                 .onDelete(perform: deleteItem)
             }
-//            .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-//            .background(Color("navy"))
-//            .cornerRadius(20.0)
-//            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-
-            .padding(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
-            .background(Color.white)
-            .shadow(color: Color("navy").opacity(0.15), radius: 0, x: 0, y: -0.5)
+            .padding(.top, 5)
+            .padding(.bottom, UIDevice.current.hasNotch ? 25 : 5)
+            .background(Color(UIColor.systemBackground))
+            .shadow(color: color.opacity(selectedIndex == 1 ? 0 : 0.15), radius: 0, x: 0, y: -0.5)
         }
         return view
     }

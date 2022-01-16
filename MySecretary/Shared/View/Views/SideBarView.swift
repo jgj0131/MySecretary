@@ -99,8 +99,8 @@ struct SideBarView: View {
                 UserInfoView()
                     .navigationBarTitle("Setting", displayMode: .large)
             } else {
-                DetailView()
-                    .navigationBarTitle(sideBarNames[selectedIndex], displayMode: .large)
+//                DetailView()
+//                    .navigationBarTitle(sideBarNames[selectedIndex], displayMode: .large)
             }
             
         }

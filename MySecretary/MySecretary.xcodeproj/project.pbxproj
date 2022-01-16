@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		099BED6FC52D0CADFC33EC2C /* Pods_MySecretary__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876F05EE0C59F65CDC70A863 /* Pods_MySecretary__macOS_.framework */; };
+		1562712B278C734700902BB3 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1562712A278C734700902BB3 /* ColorSet.swift */; };
+		1562712C278C734700902BB3 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1562712A278C734700902BB3 /* ColorSet.swift */; };
+		1562712E278C740F00902BB3 /* Thema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1562712D278C740F00902BB3 /* Thema.swift */; };
+		1562712F278C740F00902BB3 /* Thema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1562712D278C740F00902BB3 /* Thema.swift */; };
+		156271312791A89100902BB3 /* CalendatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156271302791A89100902BB3 /* CalendatView.swift */; };
+		156271322791A89100902BB3 /* CalendatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156271302791A89100902BB3 /* CalendatView.swift */; };
+		156271352791A8E800902BB3 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156271342791A8E800902BB3 /* TaskView.swift */; };
+		156271362791A8E800902BB3 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156271342791A8E800902BB3 /* TaskView.swift */; };
+		156271382791A91400902BB3 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156271372791A91400902BB3 /* DateValue.swift */; };
+		156271392791A91400902BB3 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156271372791A91400902BB3 /* DateValue.swift */; };
 		157BD9BD267A45BD002E67A5 /* AppleSignInButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BC267A45BD002E67A5 /* AppleSignInButtom.swift */; };
 		157BD9BF267A45FA002E67A5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BE267A45FA002E67A5 /* SignInView.swift */; };
 		157BD9C0267CE352002E67A5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BD9BE267A45FA002E67A5 /* SignInView.swift */; };
@@ -30,7 +40,6 @@
 		15BE8D0425F7CD820040AECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8CD925F7CD810040AECB /* ContentView.swift */; };
 		15BE8D0525F7CD820040AECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15BE8CDA25F7CD820040AECB /* Assets.xcassets */; };
 		15BE8D0625F7CD820040AECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15BE8CDA25F7CD820040AECB /* Assets.xcassets */; };
-		15BE8D1A25F7D1800040AECB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D1925F7D1800040AECB /* DetailView.swift */; };
 		15BE8D2325F7D26E0040AECB /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D2225F7D26E0040AECB /* SideBarView.swift */; };
 		15BE8D2425F7D26E0040AECB /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D2225F7D26E0040AECB /* SideBarView.swift */; };
 		15BE8D2E25F7D2840040AECB /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BE8D2D25F7D2840040AECB /* TabBarView.swift */; };
@@ -105,6 +114,11 @@
 
 /* Begin PBXFileReference section */
 		08636D8872DF25BBAAA5AF51 /* Pods-MySecretary (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySecretary (iOS).debug.xcconfig"; path = "Target Support Files/Pods-MySecretary (iOS)/Pods-MySecretary (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		1562712A278C734700902BB3 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		1562712D278C740F00902BB3 /* Thema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thema.swift; sourceTree = "<group>"; };
+		156271302791A89100902BB3 /* CalendatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendatView.swift; sourceTree = "<group>"; };
+		156271342791A8E800902BB3 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		156271372791A91400902BB3 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		157BD9BC267A45BD002E67A5 /* AppleSignInButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInButtom.swift; sourceTree = "<group>"; };
 		157BD9BE267A45FA002E67A5 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		157BD9C2267DA3B4002E67A5 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
@@ -126,7 +140,6 @@
 		15BE8CFA25F7CD820040AECB /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15BE8CFE25F7CD820040AECB /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		15BE8D0025F7CD820040AECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15BE8D1925F7D1800040AECB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		15BE8D2225F7D26E0040AECB /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		15BE8D2D25F7D2840040AECB /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		15D99FCB260A3CB800AB0714 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -208,6 +221,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		156271332791A89900902BB3 /* Sub */ = {
+			isa = PBXGroup;
+			children = (
+				156271302791A89100902BB3 /* CalendatView.swift */,
+				156271342791A8E800902BB3 /* TaskView.swift */,
+			);
+			name = Sub;
+			sourceTree = "<group>";
+		};
 		157BD9B8267A44FB002E67A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +299,7 @@
 		1584177326DD0BC60091FDFC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				156271332791A89900902BB3 /* Sub */,
 				15BE8CD925F7CD810040AECB /* ContentView.swift */,
 				15AFEF16268E086600DA6545 /* AddListView.swift */,
 				15BE8D2225F7D26E0040AECB /* SideBarView.swift */,
@@ -315,7 +338,6 @@
 			isa = PBXGroup;
 			children = (
 				15BE8D2D25F7D2840040AECB /* TabBarView.swift */,
-				15BE8D1925F7D1800040AECB /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,6 +439,9 @@
 		15D99FC625FDB34B00AB0714 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				156271372791A91400902BB3 /* DateValue.swift */,
+				1562712D278C740F00902BB3 /* Thema.swift */,
+				1562712A278C734700902BB3 /* ColorSet.swift */,
 				15FA479026C6875F008C1DEC /* PersistenceController.swift */,
 				15FA479326C687B3008C1DEC /* MySecretary.xcdatamodeld */,
 			);
@@ -477,6 +502,8 @@
 			dependencies = (
 			);
 			name = "MySecretary (iOS)";
+			packageProductDependencies = (
+			);
 			productName = "MySecretary (iOS)";
 			productReference = 15BE8CDF25F7CD820040AECB /* MySecretary.app */;
 			productType = "com.apple.product-type.application";
@@ -570,6 +597,8 @@
 				Base,
 			);
 			mainGroup = 15BE8CD225F7CD810040AECB;
+			packageReferences = (
+			);
 			productRefGroup = 15BE8CE025F7CD820040AECB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -745,9 +774,12 @@
 				15BE8D2325F7D26E0040AECB /* SideBarView.swift in Sources */,
 				157BD9BD267A45BD002E67A5 /* AppleSignInButtom.swift in Sources */,
 				157BD9C6267E08B2002E67A5 /* SignOutButton.swift in Sources */,
-				15BE8D1A25F7D1800040AECB /* DetailView.swift in Sources */,
+				156271312791A89100902BB3 /* CalendatView.swift in Sources */,
 				15FA479D26C6BAA5008C1DEC /* ItemCell.swift in Sources */,
+				1562712B278C734700902BB3 /* ColorSet.swift in Sources */,
 				157BD9C3267DA3B4002E67A5 /* UserInfoView.swift in Sources */,
+				1562712E278C740F00902BB3 /* Thema.swift in Sources */,
+				156271382791A91400902BB3 /* DateValue.swift in Sources */,
 				15836DB926C15AAA00222B42 /* MacContentCell.swift in Sources */,
 				15FA479526C687B3008C1DEC /* MySecretary.xcdatamodeld in Sources */,
 				15E6E11B25FA86F300D14BED /* MacDetailView.swift in Sources */,
@@ -757,6 +789,7 @@
 				157BD9BF267A45FA002E67A5 /* SignInView.swift in Sources */,
 				15BE8D0125F7CD820040AECB /* MySecretaryApp.swift in Sources */,
 				15AFEF15268DFD2100DA6545 /* EmailSignInButton.swift in Sources */,
+				156271352791A8E800902BB3 /* TaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,9 +800,14 @@
 				15BE8D0425F7CD820040AECB /* ContentView.swift in Sources */,
 				15836DBA26C15AAA00222B42 /* MacContentCell.swift in Sources */,
 				15AFEF1926931FA800DA6545 /* EmailSignInButton.swift in Sources */,
+				1562712C278C734700902BB3 /* ColorSet.swift in Sources */,
 				15AFEF1A26931FC500DA6545 /* SignOutButton.swift in Sources */,
+				1562712F278C740F00902BB3 /* Thema.swift in Sources */,
+				156271322791A89100902BB3 /* CalendatView.swift in Sources */,
 				157BD9C0267CE352002E67A5 /* SignInView.swift in Sources */,
+				156271392791A91400902BB3 /* DateValue.swift in Sources */,
 				15BE8D2425F7D26E0040AECB /* SideBarView.swift in Sources */,
+				156271362791A8E800902BB3 /* TaskView.swift in Sources */,
 				15BE8D0225F7CD820040AECB /* MySecretaryApp.swift in Sources */,
 				15FA479626C687B3008C1DEC /* MySecretary.xcdatamodeld in Sources */,
 				15AFEF1826931D7A00DA6545 /* AddListView.swift in Sources */,
